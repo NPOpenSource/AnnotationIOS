@@ -63,7 +63,7 @@ static OPAnnotationManager * manager = nil;
     Class annotationCls = annotation;
   ///如何实现 检查类型
     
-    OPBaseAnnotation* ann=  [[annotationCls.class alloc]init];
+    OPBaseAnnotation* ann=  [[annotationCls alloc]init];
     if (!((ann.getAnnotationQualifiedType & OPAnnotationQualifiedClass)==OPAnnotationQualifiedClass)) {
         OPLog(@"OPAnnotation:   Annation %@ not qualifiedClass %@",annotation,clsStr);
 
@@ -113,7 +113,7 @@ static OPAnnotationManager * manager = nil;
         [clsDic setObject:propertySet forKey:propertyName];
     }
 
-    OPBaseAnnotation* ann=  [[annCls.class alloc]init];
+    OPBaseAnnotation* ann=  [[annCls alloc]init];
     if (!((ann.getAnnotationQualifiedType & OPAnnotationQualifiedProperty)==OPAnnotationQualifiedProperty)) {
          OPLog(@"OPAnnotation:   Annation %@ not qualified class %@ Property %@",ann,clsStr,propertyName);
         return;
@@ -165,7 +165,7 @@ static OPAnnotationManager * manager = nil;
         [clsDic setObject:methodSet forKey:selName];
     }
     
-    OPBaseAnnotation* ann=  [[annCls.class alloc]init];
+    OPBaseAnnotation* ann=  [[annCls alloc]init];
     if (!((ann.getAnnotationQualifiedType & OPAnnotationQualifiedProperty)==OPAnnotationQualifiedMethod)) {
         OPLog(@"OPAnnotation:   Annation %@ not qualified class %@ method %@",ann,clsStr,selName);
         return;
