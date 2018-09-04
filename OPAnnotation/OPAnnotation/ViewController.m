@@ -36,7 +36,7 @@
     
    NSSet * set =  [OPVCAnnotion getVCWithType:@"UI"];
     for (Class cls in set) {
-        [self.datasource addObject:[[cls.class alloc]init]];
+        [self.datasource addObject:[[cls alloc]init]];
     }
     
     [self.view addSubview:table];
